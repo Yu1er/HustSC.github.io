@@ -41,14 +41,28 @@
     }
 
     .banner-arrow {
-        display: none;
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    .banner-arrow.prev {
+        left: 10px;
+    }
+
+    .banner-arrow.next {
+        right: 10px;
     }
 
     .login-box {
-        position: static;
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
         width: 90%;
         margin: 20px auto;
-        transform: none;
+        background: rgba(255, 255, 255, 0.95);
+        z-index: 10;
     }
 
     .info-section {
@@ -112,5 +126,38 @@
     .footer-logo img {
         margin-right: 0;
         margin-bottom: 10px;
+    }
+
+    /* 轮播图片适配 */
+    .banner-slider .banner-img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 轮播控制点调整 */
+    .banner-controls {
+        bottom: 10px;
+    }
+
+    .banner-dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* 添加中等屏幕尺寸的适配 */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .login-box {
+        right: 50px;
+        width: 280px;
+    }
+
+    .banner-arrow.prev {
+        left: 20px;
+    }
+
+    .banner-arrow.next {
+        right: 20px;
     }
 } 
