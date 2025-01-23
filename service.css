@@ -1,0 +1,209 @@
+/* 服务页面整体容器 */
+.service-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 50px;
+}
+
+/* 方案检索部分 */
+.search-section {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.search-section h2 {
+    color: #A7291F;
+    font-size: 28px;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.search-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #A7291F;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.search-box.focused {
+    transform: scale(1.02);
+}
+
+.search-box input {
+    flex: 1;
+    padding: 15px 25px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.search-box input:focus {
+    border-color: #A7291F;
+    box-shadow: 0 2px 15px rgba(167,41,31,0.1);
+}
+
+.search-box button {
+    padding: 15px 35px;
+    background: #A7291F;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(167,41,31,0.2);
+}
+
+.search-box button:hover {
+    background: #8B0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(167,41,31,0.3);
+}
+
+/* 办理服务部分 */
+.service-section {
+    margin-bottom: 50px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.service-section h2 {
+    color: #333;
+    font-size: 26px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #A7291F;
+    display: inline-block;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.service-item {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 25px rgba(167,41,31,0.1);
+    border-color: #A7291F;
+}
+
+.service-item img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.service-item:hover img {
+    transform: scale(1.1);
+}
+
+.service-item h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* 社区案例和法制生活部分 */
+.info-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.community-cases, .legal-life {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.community-cases:hover, .legal-life:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(167,41,31,0.1);
+}
+
+.community-cases h2, .legal-life h2 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #A7291F;
+    display: inline-block;
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+}
+
+.news-list li {
+    padding: 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.news-list li:hover {
+    background-color: #fff5f5;
+    padding-left: 25px;
+}
+
+.news-title {
+    position: relative;
+    padding-left: 15px;
+}
+
+.news-title::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #A7291F;
+}
+
+.news-date {
+    color: #999;
+    font-size: 14px;
+} 
