@@ -51,6 +51,14 @@
     box-shadow: 0 8px 25px rgba(167,41,31,0.15);
 }
 
+/* 添加触摸设备的特殊处理 */
+@media (hover: none) {
+    .about-image:hover {
+        transform: none;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+}
+
 /* 发展历程部分 */
 .history-section {
     background: white;

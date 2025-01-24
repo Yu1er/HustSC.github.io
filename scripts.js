@@ -63,64 +63,88 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 精彩活动图片自动滚动
-    const activitiesWrapper = document.querySelector('.activities-wrapper');
-    const images = activitiesWrapper.querySelectorAll('img');
-    const imageWidth = images[0].offsetWidth + 20; // 图片宽度 + margin
-    let scrollPosition = 0;
-    let isScrolling = true;
-    
-    function cloneImages() {
-        // 克隆所有图片并添加到末尾
-        images.forEach(img => {
-            const clone = img.cloneNode(true);
-            activitiesWrapper.appendChild(clone);
-        });
-    }
+    // 精彩活动滚动
+    function initializeActivities() {
+        const activitiesWrapper = document.querySelector('.activities-wrapper');
+        const images = document.querySelectorAll('.activity-item');
+        let scrollPosition = 0;
+        let isScrolling = true;
+        const imageWidth = 280; // 图片宽度 + 间距
 
-    function scrollActivities() {
-        if (!isScrolling) return;
-        
-        scrollPosition -= 1; // 每次移动1像素
-        
-        // 当滚动到第一组图片的末尾时
-        if (Math.abs(scrollPosition) >= imageWidth * images.length) {
-            // 立即重置到开始位置
-            scrollPosition = 0;
-            activitiesWrapper.style.transition = 'none';
-            activitiesWrapper.style.transform = `translateX(${scrollPosition}px)`;
-            // 强制重排
-            void activitiesWrapper.offsetWidth;
-            // 恢复过渡效果
-            activitiesWrapper.style.transition = 'transform 0.5s ease';
-        }
-        
-        activitiesWrapper.style.transform = `translateX(${scrollPosition}px)`;
-        requestAnimationFrame(scrollActivities);
-    }
-
-    // 初始化滚动
-    function initializeScroll() {
         // 克隆图片
-        cloneImages();
-        // 设置初始过渡效果
-        activitiesWrapper.style.transition = 'transform 0.5s ease';
-        // 开始滚动
-        scrollActivities();
+        function cloneImages() {
+            images.forEach(image => {
+                const clone = image.cloneNode(true);
+                activitiesWrapper.appendChild(clone);
+            });
+        }
+
+        function scrollActivities() {
+            if (!isScrolling) return;
+            
+            scrollPosition -= 1;
+            
+            if (Math.abs(scrollPosition) >= imageWidth * images.length) {
+                scrollPosition = 0;
+                activitiesWrapper.style.transition = 'none';
+                activitiesWrapper.style.transform = `translateX(${scrollPosition}px)`;
+                void activitiesWrapper.offsetWidth;
+                activitiesWrapper.style.transition = 'transform 0.5s ease';
+            }
+            
+            activitiesWrapper.style.transform = `translateX(${scrollPosition}px)`;
+            requestAnimationFrame(scrollActivities);
+        }
+
+        // 初始化滚动
+        function initializeScroll() {
+            cloneImages();
+            activitiesWrapper.style.transition = 'transform 0.5s ease';
+            scrollActivities();
+        }
+
+        // 触摸事件处理
+        let touchStartX = 0;
+        let isTouching = false;
+
+        activitiesWrapper.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            isTouching = true;
+            isScrolling = false;
+        }, { passive: true });
+
+        activitiesWrapper.addEventListener('touchend', () => {
+            isTouching = false;
+            isScrolling = true;
+            scrollActivities();
+        }, { passive: true });
+
+        // 鼠标事件处理
+        activitiesWrapper.addEventListener('mouseenter', () => {
+            isScrolling = false;
+        });
+
+        activitiesWrapper.addEventListener('mouseleave', () => {
+            if (!isTouching) {
+                isScrolling = true;
+                scrollActivities();
+            }
+        });
+
+        // 点击事件处理
+        activitiesWrapper.addEventListener('click', () => {
+            if (!isTouching) {
+                isScrolling = true;
+                scrollActivities();
+            }
+        });
+
+        // 等待图片加载完成后初始化
+        window.addEventListener('load', initializeScroll);
     }
 
-    // 鼠标悬停控制
-    activitiesWrapper.addEventListener('mouseenter', () => {
-        isScrolling = false;
-    });
-
-    activitiesWrapper.addEventListener('mouseleave', () => {
-        isScrolling = true;
-        scrollActivities();
-    });
-
-    // 等待图片加载完成后初始化
-    window.addEventListener('load', initializeScroll);
+    // 初始化精彩活动
+    initializeActivities();
 
     // 返回顶部功能
     const backToTop = document.querySelector('.back-to-top');
