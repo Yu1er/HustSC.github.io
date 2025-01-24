@@ -168,4 +168,132 @@
 
 .cancel-btn:hover {
     background: #ff3333;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    .user-container {
+        flex-direction: column;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    /* 左侧导航适配 */
+    .user-sidebar {
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    .user-info {
+        padding: 15px;
+    }
+
+    .avatar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .sidebar-menu li {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    /* 右侧内容区适配 */
+    .user-content {
+        padding: 20px;
+    }
+
+    .content-section h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* 表单适配 */
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .save-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* 消息列表适配 */
+    .message-item {
+        padding: 15px;
+    }
+
+    .message-title {
+        font-size: 14px;
+    }
+
+    .message-content {
+        font-size: 13px;
+    }
+
+    .message-time {
+        font-size: 12px;
+    }
+
+    /* 预约列表适配 */
+    .appointment-item {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .appointment-status {
+        align-self: flex-start;
+    }
+
+    .appointment-info h3 {
+        font-size: 16px;
+    }
+
+    .appointment-info p {
+        font-size: 13px;
+    }
+
+    .appointment-actions {
+        width: 100%;
+    }
+
+    .cancel-btn {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* 更小屏幕的额外调整 */
+@media screen and (max-width: 480px) {
+    .user-container {
+        padding: 10px;
+    }
+
+    .user-content {
+        padding: 15px;
+    }
+
+    .content-section h2 {
+        font-size: 18px;
+    }
+
+    .form-group input {
+        font-size: 13px;
+    }
+
+    .message-item {
+        padding: 12px;
+    }
+
+    .appointment-item {
+        padding: 12px;
+    }
 } 
