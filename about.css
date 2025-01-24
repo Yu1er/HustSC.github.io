@@ -350,6 +350,40 @@
 
 /* 响应式调整 */
 @media screen and (max-width: 768px) {
+    .about-container {
+        padding: 0 20px;
+    }
+
+    /* 机构简介部分调整 */
+    .about-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-text {
+        flex: none;
+        width: 100%;
+    }
+
+    .about-text p {
+        text-align: justify;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    /* 其他部分的响应式保持不变 */
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
     .mission-grid {
         grid-template-columns: 1fr;
     }
@@ -376,5 +410,21 @@
 
     .contact-info strong {
         min-width: 70px;
+    }
+}
+
+/* 更小屏幕的额外调整 */
+@media screen and (max-width: 480px) {
+    .about-container {
+        padding: 0 15px;
+    }
+
+    .about-section, .history-section, .team-section,
+    .mission-section, .work-section, .contact-section {
+        padding: 25px;
+    }
+
+    .map-container {
+        height: 180px;
     }
 } 

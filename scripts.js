@@ -130,4 +130,94 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'smooth'  // 平滑滚动
         });
     });
+
+    // 轮播图功能
+    function initCarousel() {
+        const carousel = document.querySelector('.carousel');
+        const carouselInner = carousel.querySelector('.carousel-inner');
+        const items = carousel.querySelectorAll('.carousel-item');
+        const dots = carousel.querySelectorAll('.dot');
+        let currentIndex = 0;
+        let intervalId;
+
+        // 更新活动点
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // 滚动到指定索引
+        function scrollToIndex(index) {
+            currentIndex = index;
+            const offset = -index * 100;
+            carouselInner.style.transform = `translateX(${offset}%)`;
+            updateDots();
+        }
+
+        // 自动滚动
+        function startAutoScroll() {
+            intervalId = setInterval(() => {
+                currentIndex = (currentIndex + 1) % items.length;
+                scrollToIndex(currentIndex);
+            }, 3000);
+        }
+
+        // 停止自动滚动
+        function stopAutoScroll() {
+            clearInterval(intervalId);
+        }
+
+        // 重启自动滚动
+        function restartAutoScroll() {
+            stopAutoScroll();
+            startAutoScroll();
+        }
+
+        // 点击事件处理
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                scrollToIndex(index);
+                restartAutoScroll();
+            });
+        });
+
+        // 触摸事件处理
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            stopAutoScroll();
+        }, { passive: true });
+
+        carousel.addEventListener('touchmove', (e) => {
+            touchEndX = e.touches[0].clientX;
+        }, { passive: true });
+
+        carousel.addEventListener('touchend', () => {
+            const difference = touchStartX - touchEndX;
+            if (Math.abs(difference) > 50) { // 最小滑动距离
+                if (difference > 0) {
+                    // 向左滑动
+                    currentIndex = (currentIndex + 1) % items.length;
+                } else {
+                    // 向右滑动
+                    currentIndex = (currentIndex - 1 + items.length) % items.length;
+                }
+                scrollToIndex(currentIndex);
+            }
+            startAutoScroll();
+        });
+
+        // 鼠标悬停时暂停
+        carousel.addEventListener('mouseenter', stopAutoScroll);
+        carousel.addEventListener('mouseleave', startAutoScroll);
+
+        // 开始自动滚动
+        startAutoScroll();
+    }
+
+    // 当DOM加载完成时初始化轮播图
+    initCarousel();
 }); 
