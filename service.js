@@ -25,20 +25,23 @@ document.addEventListener('DOMContentLoaded', function() {
     function performSearch() {
         const searchTerm = searchInput.value.trim();
         if (searchTerm) {
-            // 构建北大法宝搜索URL
             const searchUrl = `https://alk.12348.gov.cn/LawMultiSearch?searchField=题名&keywords=${encodeURIComponent(searchTerm)}`;
-            // 在新标签页中打开搜索结果
             window.open(searchUrl, '_blank');
         }
     }
 
-    // 点击搜索按钮时执行搜索
     searchButton.addEventListener('click', performSearch);
-
-    // 按回车键时也执行搜索
     searchInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             performSearch();
         }
     });
+
+    // 初始化登录功能
+    if (typeof window.initLoginModal === 'function') {
+        window.initLoginModal();
+    }
+    if (typeof window.checkLoginStatus === 'function') {
+        window.checkLoginStatus();
+    }
 }); 

@@ -27,4 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // 添加控件
     map.addControl(new BMap.NavigationControl());
     map.addControl(new BMap.ScaleControl());
+
+    // 初始化登录功能
+    if (typeof window.initLoginModal === 'function') {
+        window.initLoginModal();
+    }
+    if (typeof window.checkLoginStatus === 'function') {
+        window.checkLoginStatus();
+    }
 }); 

@@ -22,6 +22,7 @@
                     <li><a href="#" class="active">首页</a></li>
                     <li><a href="service.html">基本服务</a></li>
                     <li><a href="about.html">关于我们</a></li>
+                    <li><a href="#" id="loginBtn">用户登录</a></li>
                 </ul>
             </nav>
         </div>
@@ -41,25 +42,6 @@
             </div>
             <div class="banner-arrow prev">❮</div>
             <div class="banner-arrow next">❯</div>
-            <div class="login-box">
-                <div class="login-tabs">
-                    <span class="tab active">用户登录</span>
-                    <span class="tab">社工登录</span>
-                </div>
-                <form class="login-form">
-                    <div class="input-group">
-                        <input type="text" placeholder="请输入账号">
-                    </div>
-                    <div class="input-group">
-                        <input type="password" placeholder="密码">
-                    </div>
-                    <button type="submit" class="login-button">登录</button>
-                    <div class="form-footer">
-                        <a href="#">忘记密码？</a>
-                        <a href="#">立即注册</a>
-                    </div>
-                </form>
-            </div>
         </div>
     </div>
 
@@ -135,6 +117,47 @@
             返回顶部
         </div>
     </footer>
+
+    <!-- 登录弹窗 -->
+    <div class="login-modal" id="loginModal">
+        <!-- 登录表单部分 -->
+        <div class="login-content" id="loginForm">
+            <div class="login-header">
+                <h3>用户登录</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="login-tabs">
+                <span class="tab active">用户登录</span>
+                <span class="tab">社工登录</span>
+            </div>
+            <form class="login-form">
+                <div class="input-group">
+                    <input type="text" placeholder="请输入账号">
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="密码">
+                </div>
+                <button type="submit" class="login-button">登录</button>
+                <div class="form-footer">
+                    <a href="#">忘记密码？</a>
+                    <a href="#">立即注册</a>
+                </div>
+            </form>
+        </div>
+        <!-- 用户菜单部分 -->
+        <div class="user-menu" id="userMenu" style="display: none;">
+            <div class="menu-header">
+                <h3>用户中心</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="menu-content">
+                <button class="menu-item">个人信息</button>
+                <button class="menu-item">消息中心</button>
+                <button class="menu-item">我的预约</button>
+                <button class="menu-item logout-btn">退出登录</button>
+            </div>
+        </div>
+    </div>
 
     <script src="scripts.js"></script>
 </body>

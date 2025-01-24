@@ -1,3 +1,91 @@
+// 登录弹窗功能
+window.initLoginModal = function() {
+    const loginBtn = document.getElementById('loginBtn');
+    const loginModal = document.getElementById('loginModal');
+    const loginForm = document.getElementById('loginForm');
+    const closeBtns = document.querySelectorAll('.close-btn');
+    const loginTabs = document.querySelectorAll('.login-tabs .tab');
+    const loginFormElement = loginForm.querySelector('.login-form');
+
+    // 检查登录状态
+    if (localStorage.getItem('isLoggedIn')) {
+        loginBtn.textContent = '用户中心';
+        loginBtn.href = 'user.html';
+    }
+
+    if (loginBtn && loginModal) {
+        loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (localStorage.getItem('isLoggedIn')) {
+                // 已登录则跳转到用户中心页面
+                window.location.href = 'user.html';
+            } else {
+                // 未登录则显示登录框
+                loginModal.style.display = 'flex';
+            }
+        });
+
+        // 关闭按钮
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                loginModal.style.display = 'none';
+            });
+        });
+
+        // 点击弹窗外部关闭
+        loginModal.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
+
+        // 登录标签切换
+        if (loginTabs) {
+            loginTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    loginTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                });
+            });
+        }
+
+        // 处理登录表单提交
+        if (loginFormElement) {
+            loginFormElement.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = loginFormElement.querySelector('input[type="text"]').value;
+                const password = loginFormElement.querySelector('input[type="password"]').value;
+                const isUserTab = loginTabs[0].classList.contains('active');
+
+                if (username === 'hust' && password === '123456') {
+                    // 登录成功
+                    localStorage.setItem('isLoggedIn', 'true');
+                    localStorage.setItem('userType', isUserTab ? 'user' : 'worker');
+                    
+                    loginBtn.textContent = '用户中心';
+                    loginBtn.href = 'user.html';
+                    loginModal.style.display = 'none';
+                    loginFormElement.reset();
+                    
+                    alert('登录成功！');
+                    location.reload();
+                } else {
+                    alert('账号或密码错误！');
+                }
+            });
+        }
+    }
+};
+
+// 检查登录状态的函数
+window.checkLoginStatus = function() {
+    const loginBtn = document.getElementById('loginBtn');
+    if (loginBtn && localStorage.getItem('isLoggedIn')) {
+        loginBtn.textContent = '用户中心';
+        loginBtn.href = 'user.html';
+    }
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     // Banner slider functionality
     const banners = document.querySelectorAll('.banner-img');
@@ -53,15 +141,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     startAutoPlay();
-
-    // Login tabs functionality
-    const loginTabs = document.querySelectorAll('.login-tabs .tab');
-    loginTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            loginTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-        });
-    });
 
     // 精彩活动图片自动滚动
     const activitiesWrapper = document.querySelector('.activities-wrapper');
@@ -220,4 +299,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 当DOM加载完成时初始化轮播图
     initCarousel();
-}); 
+
+    // 初始化登录弹窗和检查登录状态
+    initLoginModal();
+    checkLoginStatus();
+});
+
+// 页面加载完成后也初始化登录弹窗和检查登录状态
+window.onload = function() {
+    initLoginModal();
+    checkLoginStatus();
+}; 

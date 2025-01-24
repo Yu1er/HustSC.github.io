@@ -1,0 +1,171 @@
+.user-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+    min-height: calc(100vh - 400px);
+}
+
+/* 左侧导航 */
+.user-sidebar {
+    width: 250px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px 0;
+}
+
+.user-info {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.username {
+    color: #333;
+    font-size: 16px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    padding: 15px 25px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu li:hover {
+    background: #fff1f1;
+    color: #e60012;
+}
+
+.sidebar-menu li.active {
+    background: #e60012;
+    color: white;
+}
+
+/* 右侧内容区 */
+.user-content {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.content-section h2 {
+    color: #333;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e60012;
+}
+
+/* 表单样式 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.save-btn {
+    background: #e60012;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.save-btn:hover {
+    background: #cc0000;
+}
+
+/* 消息列表 */
+.message-item {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.message-item.unread {
+    background: #fff5f5;
+}
+
+.message-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.message-time {
+    color: #999;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* 预约列表 */
+.appointment-item {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.appointment-status {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.appointment-status.pending {
+    background: #fff5e6;
+    color: #ff9900;
+}
+
+.cancel-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    background: #ff3333;
+} 

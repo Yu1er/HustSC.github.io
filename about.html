@@ -23,6 +23,7 @@
                     <li><a href="index.html">首页</a></li>
                     <li><a href="service.html">基本服务</a></li>
                     <li><a href="about.html" class="active">关于我们</a></li>
+                    <li><a href="#" id="loginBtn">用户登录</a></li>
                 </ul>
             </nav>
         </div>
@@ -186,6 +187,33 @@
             返回顶部
         </div>
     </footer>
+
+    <!-- 登录弹窗 -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-content" id="loginForm">
+            <div class="login-header">
+                <h3>用户登录</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="login-tabs">
+                <span class="tab active">用户登录</span>
+                <span class="tab">社工登录</span>
+            </div>
+            <form class="login-form">
+                <div class="input-group">
+                    <input type="text" placeholder="请输入账号">
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="密码">
+                </div>
+                <button type="submit" class="login-button">登录</button>
+                <div class="form-footer">
+                    <a href="#">忘记密码？</a>
+                    <a href="#">立即注册</a>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script src="scripts.js"></script>
     <script src="about.js"></script>
