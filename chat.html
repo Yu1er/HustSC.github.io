@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实时咨询 - 社会工作服务平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="首页Pic/Logo.jpg" alt="Logo" class="logo">
+                <div class="title-container">
+                    <div class="logo-text">HUST社工在线</div>
+                    <div class="sub-text">HUST Social Worker Online</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="service.html">基本服务</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="user.html" id="loginBtn">用户中心</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="chat-container">
+        <!-- 中间聊天区域 -->
+        <div class="chat-main">
+            <!-- 聊天头部 -->
+            <div class="chat-header">
+                <div class="current-worker">
+                    <img src="首页Pic/robot.png" alt="机器人头像" class="robot-avatar">
+                    <div class="worker-info">
+                        <span class="name">华小法</span>
+                        <span class="title">智能法律助手</span>
+                        <span class="status">在线</span>
+                    </div>
+                </div>
+                <div class="chat-notice">
+                    温馨提示：人工服务的工作时间为周一至周五，上午9:00-12:00，下午14:00-17:00
+                </div>
+            </div>
+
+            <!-- 聊天消息区域 -->
+            <div class="chat-messages">
+                <div class="message worker">
+                    <img src="首页Pic/robot.png" alt="机器人头像" class="avatar">
+                    <div class="message-content">
+                        <div class="message-info">华小法</div>
+                        <div class="message-text">您好，我是智能法律助手"华小法"，很高兴为您服务。请问有什么法律问题需要咨询吗？</div>
+                    </div>
+                </div>
+                <div class="message worker">
+                    <img src="首页Pic/robot.png" alt="机器人头像" class="avatar">
+                    <div class="message-content">
+                        <div class="message-info">华小法</div>
+                        <div class="message-text">
+                            大家都在问这些<button class="refresh-questions" title="换一批"><i class="fas fa-sync-alt"></i> 换一批</button><br>
+                            <div class="question-links">
+                                <a href="javascript:void(0)" class="question-link">工伤保险的参保范围是什么？</a><br>
+                                <a href="javascript:void(0)" class="question-link">如何做工伤认定？</a><br>
+                                <a href="javascript:void(0)" class="question-link">工伤认定后就可以做伤残鉴定？</a><br>
+                                <a href="javascript:void(0)" class="question-link">下班后自愿加班猝死算工伤吗？</a><br>
+                                <a href="javascript:void(0)" class="question-link">工伤期间可以享受什么待遇</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 聊天输入区域 -->
+            <div class="chat-input">
+                <div class="input-actions">
+                    <button class="image-btn" title="图片"><i class="fas fa-image"></i></button>
+                    <button class="file-btn" title="文件"><i class="fas fa-paperclip"></i></button>
+                </div>
+                <div class="input-main">
+                    <textarea placeholder="请输入您要咨询的问题..."></textarea>
+                    <button class="send-btn">发送</button>
+                </div>
+                <div class="input-tips">
+                    按Enter发送消息，Shift+Enter换行
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧热门话题 -->
+        <div class="info-panel">
+            <div class="hot-topics">
+                <h3>热门话题</h3>
+                <div class="topic-list">
+                    <div class="topic-item">
+                        <h4>婚姻家事</h4>
+                        <ul>
+                            <li><a href="#">离婚财产如何分割？</a></li>
+                            <li><a href="#">子女抚养权如何确定？</a></li>
+                            <li><a href="#">家暴取证注意事项</a></li>
+                        </ul>
+                    </div>
+                    <div class="topic-item">
+                        <h4>劳动就业</h4>
+                        <ul>
+                            <li><a href="#">试用期解除合同合法吗？</a></li>
+                            <li><a href="#">加班费如何计算？</a></li>
+                            <li><a href="#">工伤认定标准</a></li>
+                        </ul>
+                    </div>
+                    <div class="topic-item">
+                        <h4>合同纠纷</h4>
+                        <ul>
+                            <li><a href="#">合同违约如何索赔？</a></li>
+                            <li><a href="#">房屋买卖合同纠纷</a></li>
+                            <li><a href="#">借贷纠纷处理方法</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="首页Pic/Logo.jpg" alt="HUST社工在线">
+                <div class="footer-title">HUST社工在线</div>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">首页</a>
+                <span class="separator">|</span>
+                <a href="service.html">基本服务</a>
+                <span class="separator">|</span>
+                <a href="about.html">关于我们</a>
+            </div>
+            <div class="footer-copyright">
+                版权所有 © 2024 HUST社工在线团队 All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="chat.js"></script>
+</body>
+</html> 

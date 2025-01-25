@@ -44,4 +44,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof window.checkLoginStatus === 'function') {
         window.checkLoginStatus();
     }
+
+    // 添加检查登录并跳转的函数
+    window.checkLoginAndRedirect = function(url) {
+        if (localStorage.getItem('isLoggedIn')) {
+            window.location.href = url;
+        } else {
+            alert('请先登录后再使用实时咨询服务');
+            document.getElementById('loginBtn').click();
+        }
+    };
 }); 
