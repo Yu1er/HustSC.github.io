@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (localStorage.getItem('isLoggedIn')) {
             window.location.href = url;
         } else {
-            alert('请先登录后再使用实时咨询服务');
+            alert('请先登录后再办理服务');
             document.getElementById('loginBtn').click();
         }
     };

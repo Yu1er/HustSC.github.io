@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板 - 社会工作服务平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="message-board.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="首页Pic/Logo.jpg" alt="Logo" class="logo">
+                <div class="title-container">
+                    <div class="logo-text">HUST社工在线</div>
+                    <div class="sub-text">HUST Social Worker Online</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="service.html">基本服务</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="user.html" id="loginBtn">用户中心</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="message-board-container">
+        <!-- 留言发布区 -->
+        <div class="message-post-section">
+            <h2>发表留言</h2>
+            <form id="messageForm" class="message-form">
+                <input type="text" placeholder="请输入标题..." required>
+                <textarea placeholder="请输入留言内容..." required></textarea>
+                <button type="submit">发布留言</button>
+            </form>
+        </div>
+
+        <!-- 留言列表区 -->
+        <div class="message-list-section">
+            <div class="list-header">
+                <h2>留言列表</h2>
+                <div class="list-controls">
+                    <select class="sort-select">
+                        <option value="time">按时间排序</option>
+                        <option value="status">按状态排序</option>
+                    </select>
+                </div>
+            </div>
+            <div class="message-list">
+                <!-- 第1页留言 -->
+                <div class="message-item">
+                    <div class="message-title">
+                        <span class="status-badge replied">已回复</span>
+                        <a href="message-detail.html?id=1">如何申请法律援助？</a>
+                    </div>
+                    <div class="message-meta">
+                        <span class="time">2024-01-20</span>
+                    </div>
+                </div>
+
+                <!-- 继续添加更多留言... -->
+                <div class="message-item">
+                    <div class="message-title">
+                        <span class="status-badge replied">已回复</span>
+                        <a href="message-detail.html?id=6">未成年人打工的法律规定</a>
+                    </div>
+                    <div class="message-meta">
+                        <span class="time">2024-01-15</span>
+                    </div>
+                </div>
+
+                <div class="message-item">
+                    <div class="message-title">
+                        <span class="status-badge replied">已回复</span>
+                        <a href="message-detail.html?id=7">试用期解除劳动合同的补偿</a>
+                    </div>
+                    <div class="message-meta">
+                        <span class="time">2024-01-14</span>
+                    </div>
+                </div>
+
+                <div class="message-item">
+                    <div class="message-title">
+                        <span class="status-badge replied">已回复</span>
+                        <a href="message-detail.html?id=8">租房合同违约金过高怎么办</a>
+                    </div>
+                    <div class="message-meta">
+                        <span class="time">2024-01-13</span>
+                    </div>
+                </div>
+
+                <!-- 第2页留言 -->
+                <div class="message-item">
+                    <div class="message-title">
+                        <span class="status-badge replied">已回复</span>
+                        <a href="message-detail.html?id=9">工伤康复期间的工资待遇</a>
+                    </div>
+                    <div class="message-meta">
+                        <span class="time">2024-01-12</span>
+                    </div>
+                </div>
+
+                <div class="message-item">
+                    <div class="message-title">
+                        <span class="status-badge replied">已回复</span>
+                        <a href="message-detail.html?id=10">婚内财产约定需要公证吗</a>
+                    </div>
+                    <div class="message-meta">
+                        <span class="time">2024-01-11</span>
+                    </div>
+                </div>
+
+                <!-- 继续添加更多留言... -->
+            </div>
+            <!-- 分页控件 -->
+            <div class="pagination">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <span class="page-dots">...</span>
+                <button class="page-btn">10</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="首页Pic/Logo.jpg" alt="HUST社工在线">
+                <div class="footer-title">HUST社工在线</div>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">首页</a>
+                <span class="separator">|</span>
+                <a href="service.html">基本服务</a>
+                <span class="separator">|</span>
+                <a href="about.html">关于我们</a>
+            </div>
+            <div class="footer-copyright">
+                版权所有 © 2024 HUST社工在线团队 All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="message-board.js"></script>
+</body>
+</html> 
+</html> 
