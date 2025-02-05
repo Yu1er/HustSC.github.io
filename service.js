@@ -37,14 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 初始化登录功能
-    if (typeof window.initLoginModal === 'function') {
-        window.initLoginModal();
-    }
-    if (typeof window.checkLoginStatus === 'function') {
-        window.checkLoginStatus();
-    }
-
     // 添加检查登录并跳转的函数
     window.checkLoginAndRedirect = function(url) {
         if (localStorage.getItem('isLoggedIn')) {
