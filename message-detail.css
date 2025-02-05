@@ -1,14 +1,32 @@
+/* 添加页面整体布局样式 */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
 .message-detail-container {
-    max-width: 1000px;
+    width: 1200px; /* 改为固定宽度 */
     margin: 30px auto;
     padding: 0 20px;
+    flex: 1;
+    box-sizing: border-box; /* 确保padding不会增加总宽度 */
+}
+
+/* 确保页脚在底部 */
+.footer-section {
+    margin-top: auto;
+    width: 100%; /* 确保页脚占满宽度 */
 }
 
 .message-detail {
     background: white;
-    padding: 40px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    width: 100%; /* 确保内容区域占满容器宽度 */
+    box-sizing: border-box;
 }
 
 /* 返回按钮 */
@@ -171,6 +189,13 @@
 }
 
 /* 响应式调整 */
+@media screen and (max-width: 1240px) { /* 适应稍小的屏幕 */
+    .message-detail-container {
+        width: 100%;
+        max-width: 1200px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .message-detail-container {
         padding: 15px;
