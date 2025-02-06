@@ -52,20 +52,23 @@ body {
     margin-bottom: 30px;
     border-bottom: 2px solid #f5f5f5;
     padding-bottom: 20px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .message-title {
     font-size: 26px;
     color: #333;
-    margin-bottom: 15px;
+    margin-bottom: 3px;
     line-height: 1.4;
     font-weight: 500;
     position: relative;
     padding-left: 15px;
-    padding-right: 200px; /* 为时间预留空间 */
-    word-break: break-word; /* 使用更智能的换行 */
-    overflow-wrap: break-word; /* 确保长单词也能换行 */
+    word-break: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+    text-align: left;
 }
 
 .message-title::before {
@@ -83,9 +86,12 @@ body {
 .message-meta {
     color: #999;
     font-size: 14px;
-    position: absolute; /* 将时间定位到右上角 */
-    right: 0;
-    top: 5px; /* 微调位置使其与标题第一行对齐 */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 3px;
+    padding-left: 15px;
+    align-self: flex-start;
 }
 
 .post-time {
@@ -209,10 +215,8 @@ body {
     }
 
     .message-title {
-        padding-right: 0; /* 移动端取消右侧padding */
         font-size: 20px;
         padding-left: 12px;
-        margin-bottom: 12px;
     }
 
     .message-title::before {
@@ -230,14 +234,11 @@ body {
     }
 
     .message-meta {
-        position: static; /* 移动端恢复正常文档流 */
-        margin-top: 5px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+        padding-left: 12px; /* 改用 padding-left 统一样式 */
     }
 
-    .post-time {
-        margin-top: 5px; /* 增加与标题的间距 */
+    .message-header {
+        display: flex;
+        flex-direction: column;
     }
 } 
