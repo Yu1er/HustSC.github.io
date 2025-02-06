@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="message-info">我 ${time}</div>
                         <div class="message-text">${text}</div>
                     </div>
-                    <img src="首页Pic/avatar.png" alt="用户头像" class="avatar">
+                    <img src="服务Pic/avatar.png" alt="用户头像" class="avatar">
                 </div>
             `;
             
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 const replyHTML = `
                     <div class="message worker">
-                        <img src="首页Pic/robot.png" alt="机器人头像" class="avatar">
+                        <img src="服务Pic/robot.png" alt="机器人头像" class="avatar">
                         <div class="message-content">
                             <div class="message-info">华小法 ${time}</div>
                             <div class="message-text">我正在查询相关法律条款，请稍候...</div>
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     const detailReplyHTML = `
                         <div class="message worker">
-                            <img src="首页Pic/robot.png" alt="机器人头像" class="avatar">
+                            <img src="服务Pic/robot.png" alt="机器人头像" class="avatar">
                             <div class="message-content">
                                 <div class="message-info">华小法 ${time}</div>
                                 <div class="message-text">${getReplyContent(text)}</div>
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="message-info">我 ${time}</div>
                     <div class="message-text">${text}</div>
                 </div>
-                <img src="首页Pic/avatar.png" alt="用户头像" class="avatar">
+                <img src="服务Pic/avatar.png" alt="用户头像" class="avatar">
             </div>
         `;
 
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             const replyHTML = `
                 <div class="message worker">
-                    <img src="首页Pic/robot.png" alt="机器人头像" class="avatar">
+                    <img src="服务Pic/robot.png" alt="机器人头像" class="avatar">
                     <div class="message-content">
                         <div class="message-info">华小法 ${time}</div>
                         <div class="message-text">您好，我理解您的问题。请您详细描述具体情况，以便我为您提供更准确的答复。</div>
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="message-info">我 ${time}</div>
                                 <div class="message-text">${text}</div>
                             </div>
-                            <img src="首页Pic/avatar.png" alt="用户头像" class="avatar">
+                            <img src="服务Pic/avatar.png" alt="用户头像" class="avatar">
                         </div>
                     `;
                     
