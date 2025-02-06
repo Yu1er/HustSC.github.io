@@ -530,4 +530,14 @@ select option:disabled {
     background: #cc0000;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(230,0,18,0.2);
+}
+
+/* 修改预约提示样式 */
+.modify-tip {
+    background: #fff3e5;
+    color: #ff9500;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+    font-size: 14px;
 } 

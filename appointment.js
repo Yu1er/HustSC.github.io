@@ -76,6 +76,41 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // 检查是否是修改预约
+    const modifyAppointmentData = localStorage.getItem('modifyAppointment');
+    if (modifyAppointmentData) {
+        try {
+            // 解析修改预约的数据
+            const appointmentData = JSON.parse(modifyAppointmentData);
+            
+            // 填充表单
+            document.getElementById('serviceName').value = appointmentData.serviceName;
+            dateInput.value = appointmentData.appointmentDate;
+            timeSelect.value = appointmentData.appointmentTime;
+            contactInput.value = appointmentData.contact;
+            descriptionInput.value = appointmentData.description;
+            
+            // 更新字数统计
+            document.getElementById('currentCount').textContent = appointmentData.description.length;
+            
+            // 添加修改提示
+            const formTitle = document.querySelector('.appointment-form-section h2');
+            formTitle.textContent = '修改预约';
+            
+            // 添加提示信息
+            const tipDiv = document.createElement('div');
+            tipDiv.className = 'modify-tip';
+            tipDiv.textContent = `正在修改预约单号：${appointmentData.originalOrderNumber}`;
+            formTitle.insertAdjacentElement('afterend', tipDiv);
+            
+            // 清除修改数据
+            localStorage.removeItem('modifyAppointment');
+        } catch (error) {
+            console.error('解析修改预约数据失败:', error);
+            localStorage.removeItem('modifyAppointment');
+        }
+    }
+
     // 修改表单提交事件
     appointmentForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -210,15 +245,26 @@ document.addEventListener('DOMContentLoaded', function() {
         return `A${year}${month}${day}${hour}${minute}${random}`;
     }
 
-    // 保存预约信息
-    function saveAppointment(data) {
-        const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
-        appointments.push({
-            ...data,
-            status: 'pending',
-            submitTime: new Date().toISOString()
-        });
+    // 修改保存预约信息函数
+    function saveAppointment(formData) {
+        let appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+        
+        // 添加新预约
+        formData.submitTime = new Date().toISOString();
+        const estimatedDate = new Date();
+        estimatedDate.setDate(estimatedDate.getDate() + 3);
+        formData.estimatedTime = estimatedDate.toISOString();
+        formData.status = 'pending';
+        formData.timeline = {
+            submit: new Date().toISOString(),
+            review: null,
+            arrange: null,
+            complete: null
+        };
+        appointments.push(formData);
+        
         localStorage.setItem('appointments', JSON.stringify(appointments));
+        return formData;
     }
 
     // 显示成功提示
