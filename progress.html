@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>进度查询 - 社会工作服务平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="progress.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="首页Pic/Logo.jpg" alt="Logo" class="logo">
+                <div class="title-container">
+                    <div class="logo-text">HUST社工在线</div>
+                    <div class="sub-text">HUST Social Worker Online</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="service.html">基本服务</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="user.html" id="loginBtn">用户中心</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="progress-container">
+        <div class="progress-search-section">
+            <h2>进度查询</h2>
+            <div class="search-form">
+                <input type="text" id="orderNumber" placeholder="请输入预约单号">
+                <button id="searchBtn">查询</button>
+            </div>
+        </div>
+
+        <div class="progress-result-section" style="display: none;">
+            <div class="result-header">
+                <h3>预约详情</h3>
+                <div class="operation-buttons">
+                    <button class="cancel-btn" id="cancelBtn">取消预约</button>
+                    <button class="modify-btn" id="modifyBtn">修改预约</button>
+                </div>
+            </div>
+
+            <div class="progress-info">
+                <div class="info-group basic-info">
+                    <h4>基本信息</h4>
+                    <div class="info-item">
+                        <span class="label">预约单号：</span>
+                        <span class="value" id="resultOrderNumber"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">服务类型：</span>
+                        <span class="value" id="resultServiceType"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">预约时间：</span>
+                        <span class="value" id="resultDateTime"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">联系方式：</span>
+                        <span class="value" id="resultContact"></span>
+                    </div>
+                </div>
+
+                <div class="info-group status-info">
+                    <h4>处理进度</h4>
+                    <div class="info-item">
+                        <span class="label">当前状态：</span>
+                        <span class="value status" id="resultStatus"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">预计完成：</span>
+                        <span class="value" id="estimatedTime"></span>
+                    </div>
+                </div>
+
+                <div class="info-group description-info">
+                    <h4>问题描述</h4>
+                    <div class="description-content" id="resultDescription"></div>
+                </div>
+            </div>
+
+            <div class="progress-timeline">
+                <div class="timeline-track"></div>
+                <div class="timeline-items">
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <h4>提交预约</h4>
+                            <p id="submitTime"></p>
+                            <div class="timeline-detail">已收到您的预约申请</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <h4>审核通过</h4>
+                            <p id="reviewTime"></p>
+                            <div class="timeline-detail">工作人员已审核您的预约信息</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <h4>安排面谈</h4>
+                            <p id="arrangeTime"></p>
+                            <div class="timeline-detail">已为您安排专业人员</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <h4>服务完成</h4>
+                            <p id="completeTime"></p>
+                            <div class="timeline-detail">服务已完成，感谢您的信任</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-section" style="display: none;">
+                <h4>服务评价</h4>
+                <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <textarea placeholder="请分享您的服务体验..." rows="3"></textarea>
+                <button class="submit-feedback">提交评价</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="首页Pic/Logo.jpg" alt="HUST社工在线">
+                <div class="footer-title">HUST社工在线</div>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">首页</a>
+                <span class="separator">|</span>
+                <a href="service.html">基本服务</a>
+                <span class="separator">|</span>
+                <a href="about.html">关于我们</a>
+            </div>
+            <div class="footer-copyright">
+                版权所有 © 2024 HUST社工在线团队 All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="progress.js"></script>
+</body>
+</html>

@@ -1,0 +1,533 @@
+/* 预约服务页面样式 */
+.appointment-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.appointment-form-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.appointment-form-section h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.appointment-form-section h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background: #e60012;
+    border-radius: 2px;
+}
+
+.appointment-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #e60012;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.appointment-form button {
+    background: #e60012;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 30px auto 0;
+}
+
+.appointment-form button:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230,0,18,0.2);
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .appointment-container {
+        padding: 15px;
+    }
+
+    .appointment-form-section {
+        padding: 20px;
+    }
+
+    .appointment-form-section h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .appointment-form button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* 消息提示框样式 */
+.message-box {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 25px;
+    border-radius: 25px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 1000;
+    animation: slide-in 0.3s ease;
+    min-width: 300px;
+}
+
+.message-box.success {
+    border: 1px solid #52c41a;
+    color: #52c41a;
+}
+
+.message-box.error {
+    border: 1px solid #ff4d4f;
+    color: #ff4d4f;
+}
+
+.message-box.warning {
+    border: 1px solid #faad14;
+    color: #faad14;
+}
+
+.message-box.info {
+    border: 1px solid #1890ff;
+    color: #1890ff;
+}
+
+.message-box i {
+    font-size: 16px;
+}
+
+.message-box span {
+    font-size: 14px;
+    flex: 1;
+}
+
+.message-tips {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* 表单验证样式 */
+.form-group input:invalid,
+.form-group select:invalid,
+.form-group textarea:invalid {
+    border-color: #ff4d4f;
+}
+
+.form-group input:focus:invalid,
+.form-group select:focus:invalid,
+.form-group textarea:focus:invalid {
+    box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
+}
+
+/* 禁用选项样式 */
+select option:disabled {
+    color: #999;
+    font-style: italic;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fade-out 0.3s ease forwards;
+}
+
+@keyframes fade-out {
+    from {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+}
+
+/* 服务类型说明样式 */
+.service-description {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #666;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    display: none;
+}
+
+.service-description.active {
+    display: block;
+}
+
+/* 文本框包装器 */
+.textarea-wrapper {
+    position: relative;
+}
+
+.word-count {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: #999;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.word-count.warning {
+    color: #faad14;
+}
+
+.word-count.error {
+    color: #ff4d4f;
+}
+
+.description-tips {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #666;
+}
+
+/* 预览部分样式 */
+.preview-section {
+    margin: 20px 0;
+    padding: 25px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.preview-section h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.preview-item {
+    display: flex;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 6px;
+}
+
+.preview-label {
+    width: 100px;
+    color: #666;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.preview-value {
+    color: #333;
+    flex: 1;
+}
+
+.preview-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.preview-buttons button {
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn {
+    background: white;
+    border: 1px solid #ddd;
+    color: #666;
+}
+
+.back-btn:hover {
+    border-color: #e60012;
+    color: #e60012;
+}
+
+.confirm-btn {
+    background: #e60012;
+    border: none;
+    color: white;
+}
+
+.confirm-btn:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230,0,18,0.2);
+}
+
+/* 时间段容量提示 */
+.time-slot-capacity {
+    font-size: 12px;
+    color: #666;
+    margin-left: 8px;
+}
+
+/* 表单自动保存提示 */
+.autosave-tip {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 15px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.autosave-tip.show {
+    opacity: 1;
+}
+
+/* 修改成功提示框样式 */
+.success-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    text-align: center;
+    z-index: 1000;
+    min-width: 300px;
+    animation: fade-in 0.3s ease;
+}
+
+.success-modal .icon {
+    color: #52c41a;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.success-modal .title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.success-modal .content {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.success-modal .order-number {
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 16px;
+    color: #333;
+    margin: 15px 0;
+}
+
+.success-modal .close-btn {
+    background: #e60012;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.success-modal .close-btn:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230,0,18,0.2);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    animation: fade-in 0.3s ease;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 预览模态框样式 */
+.preview-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    z-index: 1000;
+    min-width: 400px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: fade-in 0.3s ease;
+}
+
+.preview-modal h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.preview-item {
+    display: flex;
+    margin-bottom: 15px;
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: 6px;
+}
+
+.preview-label {
+    width: 100px;
+    color: #666;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.preview-value {
+    color: #333;
+    flex: 1;
+    word-break: break-all;
+}
+
+.preview-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.preview-buttons button {
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn {
+    background: white;
+    border: 1px solid #ddd;
+    color: #666;
+}
+
+.back-btn:hover {
+    border-color: #e60012;
+    color: #e60012;
+}
+
+.confirm-btn {
+    background: #e60012;
+    border: none;
+    color: white;
+}
+
+.confirm-btn:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230,0,18,0.2);
+} 

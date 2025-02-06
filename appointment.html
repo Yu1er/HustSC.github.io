@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预约服务 - 社会工作服务平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="appointment.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="首页Pic/Logo.jpg" alt="Logo" class="logo">
+                <div class="title-container">
+                    <div class="logo-text">HUST社工在线</div>
+                    <div class="sub-text">HUST Social Worker Online</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="service.html">基本服务</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="user.html" id="loginBtn">用户中心</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="appointment-container">
+        <div class="appointment-form-section">
+            <h2>预约服务</h2>
+            <form id="appointmentForm" class="appointment-form">
+                <div class="form-group">
+                    <label for="serviceName">服务类型</label>
+                    <select id="serviceName" required>
+                        <option value="">请选择服务类型</option>
+                        <option value="法律咨询">法律咨询</option>
+                        <option value="心理咨询">心理咨询</option>
+                        <option value="就业指导">就业指导</option>
+                        <option value="社会救助">社会救助</option>
+                    </select>
+                    <div class="service-description" id="serviceDescription"></div>
+                </div>
+                <div class="form-group">
+                    <label for="appointmentDate">预约日期</label>
+                    <input type="date" id="appointmentDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointmentTime">预约时间</label>
+                    <select id="appointmentTime" required>
+                        <option value="">请选择时间段</option>
+                        <option value="09:00">09:00-10:00</option>
+                        <option value="10:00">10:00-11:00</option>
+                        <option value="14:00">14:00-15:00</option>
+                        <option value="15:00">15:00-16:00</option>
+                        <option value="16:00">16:00-17:00</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">问题描述</label>
+                    <div class="textarea-wrapper">
+                        <textarea id="description" rows="4" placeholder="请简要描述您的问题..." required></textarea>
+                        <div class="word-count">
+                            <span id="currentCount">0</span>/500字
+                        </div>
+                    </div>
+                    <div class="description-tips">请详细描述您的问题，以便我们更好地为您服务</div>
+                </div>
+                <div class="form-group">
+                    <label for="contact">联系方式</label>
+                    <input type="tel" id="contact" placeholder="请输入您的手机号码" required>
+                </div>
+                <button type="submit" id="submitBtn">提交预约</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="首页Pic/Logo.jpg" alt="HUST社工在线">
+                <div class="footer-title">HUST社工在线</div>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">首页</a>
+                <span class="separator">|</span>
+                <a href="service.html">基本服务</a>
+                <span class="separator">|</span>
+                <a href="about.html">关于我们</a>
+            </div>
+            <div class="footer-copyright">
+                版权所有 © 2024 HUST社工在线团队 All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="appointment.js"></script>
+</body>
+</html> 

@@ -1,0 +1,399 @@
+/* 页面整体布局样式 */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* 内容容器样式 */
+.progress-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    flex: 1;
+    box-sizing: border-box;
+    width:100%; /* 确保容器宽度正确 */
+}
+
+/* 确保页脚在底部 */
+.footer-section {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* 查询部分和结果部分的容器样式 */
+.progress-search-section,
+.progress-result-section {
+    width: 100%;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+}
+
+.progress-search-section {
+    margin-bottom: 30px;
+}
+
+/* 进度查询页面样式 */
+.progress-search-section h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.progress-search-section h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background: #e60012;
+    border-radius: 2px;
+}
+
+.search-form {
+    display: flex;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-form input:focus {
+    border-color: #e60012;
+    outline: none;
+}
+
+.search-form button {
+    padding: 12px 35px;
+    background: #e60012;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.search-form button:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230,0,18,0.2);
+}
+
+.progress-result-section {
+    margin-bottom: 30px;
+}
+
+.progress-result-section h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.progress-info {
+    margin-bottom: 40px;
+}
+
+.info-item {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.info-item .label {
+    color: #666;
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.info-item .value {
+    color: #333;
+    font-weight: 500;
+}
+
+.info-item .status {
+    color: #52c41a;
+}
+
+.progress-timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 30px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: -30px;
+    width: 1px;
+    background: #e8e8e8;
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+
+.timeline-point {
+    position: absolute;
+    left: 11px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: #e60012;
+    border-radius: 50%;
+}
+
+.timeline-content h4 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.timeline-content p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 1240px) {
+    .progress-container {
+        width: 100%;
+        max-width: 1200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .progress-container {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .progress-search-section,
+    .progress-result-section {
+        padding: 20px;
+    }
+
+    .progress-search-section h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .search-form button {
+        width: 100%;
+    }
+
+    .info-item {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .info-item .label {
+        width: auto;
+        margin-bottom: 5px;
+    }
+
+    .operation-buttons {
+        margin-top: 15px;
+        width: 100%;
+    }
+}
+
+/* 结果部分样式优化 */
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.operation-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.operation-buttons button {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn {
+    background: white;
+    border: 1px solid #ff4d4f;
+    color: #ff4d4f;
+}
+
+.modify-btn {
+    background: white;
+    border: 1px solid #1890ff;
+    color: #1890ff;
+}
+
+.cancel-btn:hover {
+    background: #ff4d4f;
+    color: white;
+}
+
+.modify-btn:hover {
+    background: #1890ff;
+    color: white;
+}
+
+/* 信息组样式 */
+.info-group {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.info-group h4 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* 时间线优化 */
+.progress-timeline {
+    position: relative;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+.timeline-track {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e8e8e8;
+}
+
+.timeline-items {
+    position: relative;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 30px;
+}
+
+.timeline-point {
+    position: absolute;
+    left: 11px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e8e8e8;
+    border: 2px solid white;
+    z-index: 1;
+}
+
+.timeline-item.active .timeline-point {
+    background: #e60012;
+    box-shadow: 0 0 0 4px rgba(230,0,18,0.2);
+}
+
+.timeline-content h4 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.timeline-content p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.timeline-detail {
+    color: #999;
+    font-size: 13px;
+}
+
+/* 评价部分 */
+.feedback-section {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.rating-stars {
+    margin: 15px 0;
+    color: #ffd700;
+    font-size: 24px;
+}
+
+.rating-stars i {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rating-stars i:hover {
+    transform: scale(1.2);
+}
+
+.submit-feedback {
+    background: #e60012;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-feedback:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230,0,18,0.2);
+}
+
+/* 响应式优化 */
+@media screen and (max-width: 768px) {
+    .operation-buttons {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .operation-buttons button {
+        flex: 1;
+    }
+} 
