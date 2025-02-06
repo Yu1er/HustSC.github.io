@@ -128,7 +128,7 @@
     border: 1px solid #eee;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     background: white;
 }
 
@@ -158,18 +158,23 @@
 .message-title {
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 0;
 }
 
 .message-title a {
     color: #333;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 16px;
     transition: color 0.3s ease;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 600px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    line-height: 1.4;
 }
 
 .message-title a:hover {
@@ -179,6 +184,8 @@
 .message-meta {
     color: #999;
     font-size: 14px;
+    flex-shrink: 0;
+    margin-left: 15px;
     min-width: 80px;
     text-align: right;
 }
@@ -221,11 +228,11 @@
 
 /* 状态标签样式 */
 .status-badge {
-    display: inline-block;
-    padding: 2px 8px;
+    padding: 4px 8px;
     border-radius: 4px;
     font-size: 12px;
-    margin-right: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .status-badge.pending {
@@ -318,23 +325,33 @@
         padding: 20px;
     }
 
+    .message-item {
+        padding: 12px 15px;
+    }
+
+    .message-title {
+        gap: 8px;
+    }
+
     .message-title a {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .message-meta {
-        flex-wrap: wrap;
-        gap: 10px;
+        font-size: 12px;
+        margin-left: 10px;
+        min-width: 70px;
+    }
+
+    .status-badge {
+        padding: 2px 6px;
+        font-size: 11px;
     }
 
     .list-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
-    }
-
-    .message-title a {
-        max-width: 200px;
     }
 
     .pagination {
