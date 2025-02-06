@@ -16,7 +16,7 @@
 }
 
 .search-section h2 {
-    color: #A7291F;
+    color: #e60012;
     font-size: 28px;
     margin-bottom: 30px;
     position: relative;
@@ -31,7 +31,7 @@
     transform: translateX(-50%);
     width: 50px;
     height: 3px;
-    background: #A7291F;
+    background: #e60012;
 }
 
 .search-box {
@@ -58,13 +58,13 @@
 }
 
 .search-box input:focus {
-    border-color: #A7291F;
+    border-color: #e60012;
     box-shadow: 0 2px 15px rgba(167,41,31,0.1);
 }
 
 .search-box button {
     padding: 15px 35px;
-    background: #A7291F;
+    background: #e60012;
     color: white;
     border: none;
     border-radius: 25px;
@@ -75,7 +75,7 @@
 }
 
 .search-box button:hover {
-    background: #8B0000;
+    background: #e60012;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(167,41,31,0.3);
 }
@@ -94,7 +94,7 @@
     font-size: 26px;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #A7291F;
+    border-bottom: 2px solid #e60012;
     display: inline-block;
 }
 
@@ -118,7 +118,7 @@
 .service-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 5px 25px rgba(167,41,31,0.1);
-    border-color: #A7291F;
+    border-color: #e60012;
 }
 
 .service-item img {
@@ -170,7 +170,7 @@
     font-size: 22px;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #A7291F;
+    border-bottom: 2px solid #e60012;
     display: inline-block;
 }
 
@@ -200,7 +200,7 @@
     content: '•';
     position: absolute;
     left: 0;
-    color: #A7291F;
+    color: #e60012;
 }
 
 .news-date {

@@ -18,7 +18,7 @@
     font-size: 26px;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #A7291F;
+    border-bottom: 2px solid #e60012;
     display: inline-block;
 }
 
@@ -65,7 +65,7 @@
     font-size: 26px;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #A7291F;
+    border-bottom: 2px solid #e60012;
     display: inline-block;
 }
 
@@ -81,7 +81,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: #A7291F;
+    background: #e60012;
 }
 
 .timeline-item {
@@ -97,13 +97,13 @@
     top: 5px;
     width: 20px;
     height: 20px;
-    background: #A7291F;
+    background: #e60012;
     border-radius: 50%;
 }
 
 .time {
     font-weight: bold;
-    color: #A7291F;
+    color: #e60012;
     margin-bottom: 5px;
 }
 
@@ -125,7 +125,7 @@
     font-size: 26px;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #A7291F;
+    border-bottom: 2px solid #e60012;
     display: inline-block;
 }
 
@@ -148,7 +148,7 @@
 }
 
 .team-category h3 {
-    color: #A7291F;
+    color: #e60012;
     margin-bottom: 15px;
     font-size: 20px;
 }
@@ -172,7 +172,7 @@
     font-size: 26px;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #A7291F;
+    border-bottom: 2px solid #e60012;
     display: inline-block;
 }
 
@@ -195,7 +195,7 @@
 }
 
 .mission-item h3 {
-    color: #A7291F;
+    color: #e60012;
     margin-bottom: 15px;
     font-size: 20px;
 }
@@ -219,7 +219,7 @@
     font-size: 26px;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #A7291F;
+    border-bottom: 2px solid #e60012;
     display: inline-block;
 }
 
@@ -242,7 +242,7 @@
 }
 
 .work-item h3 {
-    color: #A7291F;
+    color: #e60012;
     margin-bottom: 15px;
     font-size: 20px;
 }
@@ -263,7 +263,7 @@
     content: '•';
     position: absolute;
     left: 0;
-    color: #A7291F;
+    color: #e60012;
 }
 
 /* 联系我们部分 */
@@ -279,7 +279,7 @@
     font-size: 26px;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #A7291F;
+    border-bottom: 2px solid #e60012;
     display: inline-block;
 }
 
