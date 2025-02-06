@@ -37,7 +37,19 @@
 
     /* 首页特定样式 */
     .banner-container {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .banner-content {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .banner-slider {
         height: 300px;
+        margin-bottom: 20px;
     }
 
     .banner-arrow {
@@ -60,9 +72,9 @@
         top: auto;
         transform: none;
         width: 90%;
-        margin: 20px auto;
-        background: rgba(255, 255, 255, 0.95);
-        z-index: 10;
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
     }
 
     .info-section {

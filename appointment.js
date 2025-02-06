@@ -460,6 +460,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // 加载用户手机号
+    const userInfo = JSON.parse(localStorage.getItem('userInfo') || '{}');
+    if (userInfo.phone) {
+        contactInput.value = userInfo.phone;
+    }
+
     // 加载草稿
     loadDraft();
 }); 

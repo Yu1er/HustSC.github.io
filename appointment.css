@@ -48,22 +48,77 @@
     font-weight: 500;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+/* 表单控件统一样式 */
+.appointment-form select,
+.appointment-form input[type="date"],
+.appointment-form input[type="tel"] {
     width: 100%;
-    padding: 12px 15px;
+    height: 42px; /* 统一高度 */
+    padding: 10px 15px;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333;
+    background: white;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+/* 下拉框特殊样式 */
+.appointment-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.762L10.825 4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+/* 日期选择器特殊样式 */
+.appointment-form input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+/* 悬停和焦点状态 */
+.appointment-form select:hover,
+.appointment-form input[type="date"]:hover,
+.appointment-form input[type="tel"]:hover {
+    border-color: #e60012;
+}
+
+.appointment-form select:focus,
+.appointment-form input[type="date"]:focus,
+.appointment-form input[type="tel"]:focus {
     border-color: #e60012;
     outline: none;
+    box-shadow: 0 0 0 2px rgba(230,0,18,0.1);
+}
+
+/* 问题描述文本框样式 */
+.appointment-form textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333;
+    background: white;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* 文本框悬停和焦点状态 */
+.appointment-form textarea:hover {
+    border-color: #e60012;
+}
+
+.appointment-form textarea:focus {
+    border-color: #e60012;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(230,0,18,0.1);
 }
 
 .form-group textarea {

@@ -60,6 +60,7 @@ window.initLoginModal = function() {
                 if (username === 'hust' && password === '123456') {
                     // 登录成功
                     localStorage.setItem('isLoggedIn', 'true');
+                    localStorage.setItem('username', username);
                     localStorage.setItem('userType', isUserTab ? 'user' : 'worker');
                     
                     loginBtn.textContent = '用户中心';
